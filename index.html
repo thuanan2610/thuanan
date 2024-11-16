@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTA Color Cycle</title>
+</head>
+<body>
+    <script>
+        const colors = ['red', 'green', 'yellow'];
+        let currentColorIndex = 0;
+
+        const dtaElement = document.createElement('div');
+        dtaElement.id = 'dta';
+        dtaElement.style.fontSize = '100px';
+        dtaElement.style.fontWeight = 'bold';
+        dtaElement.innerText = 'DTA';
+        document.body.appendChild(dtaElement);
+
+        function changeColor() {
+            dtaElement.style.color = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+
+        setInterval(changeColor, 1000);
+    </script>
+</body>
+</html>
